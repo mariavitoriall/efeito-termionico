@@ -490,7 +490,7 @@ svg #line {
         /* Impede a rolagem horizontal */
         margin: 0;
         /* Remove qualquer margem padrão */
-        padding: 0 1rem;
+        padding: 0 0.4rem;
         /* Remove qualquer padding do body */
         box-sizing: border-box;
     }
@@ -523,6 +523,7 @@ svg #line {
     nav ul {
         font-size: 1.8rem;
         margin: 0 2rem 0 0;
+        gap: 0.5rem
     }
 
 
@@ -534,7 +535,7 @@ svg #line {
     nav ul li a {
         font-size: 0.6rem;
         margin: 0 0.1rem 0 0.01rem;
-        padding: 0.25rem;
+        padding: 0.1rem;
     }
 
     #inicio {
@@ -543,8 +544,9 @@ svg #line {
         /* Mantém a altura da tela inteira */
     }
 
-    .contador {
-        font-size: 0.6rem;
+    #contador {
+        font-size: 0.5rem;
+        gap: 0.5rem;
     }
 
     #inicio p {
@@ -580,7 +582,7 @@ svg #line {
 
     /* Linha vertical no centro */
     .timeline::after {
-        left: 0.5%;
+        left: 0.2%;
         transform: translateX(0%);
         width: 0.25rem;
 
