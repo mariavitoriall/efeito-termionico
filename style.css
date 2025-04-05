@@ -501,7 +501,7 @@ svg #line {
         padding: 10px 20px;
         width: 100vw;
         overflow-x: hidden;
-        margin: 0;
+        margin: 0 4rem 0 6rem;
         justify-content: space-between;
         position: fixed;
         top: 0;
@@ -522,6 +522,7 @@ svg #line {
 
     nav ul {
         font-size: 1.8rem;
+        margin: 0 2rem 0 0;
     }
 
 
@@ -603,7 +604,7 @@ svg #line {
     }
 
     .conteudo h3 {
-        font-size: 2.5rem;
+        font-size: 1.2rem;
     }
 
     /* Alternância de posição para eventos */
