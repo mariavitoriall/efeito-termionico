@@ -545,8 +545,13 @@ svg #line {
     }
 
     #contador {
-        font-size: 0.4rem;
         gap: 0.3rem;
+    }
+
+    #contador .box {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 10px;
     }
 
     #inicio p {
