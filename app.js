@@ -1,22 +1,42 @@
-const dataInicio = new Date("2022-04-10T22:38:00"); // Ajuste para sua data real
+const dataInicio = new Date("2022-04-10T22:38:00-03:00");
+console.log(dataInicio.toString());
+
+
 
 function atualizarContador() {
     const agora = new Date();
-    const diferenca = agora - dataInicio;
 
-    const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365));
-    const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+    // Corrige a data de início para o equivalente em UTC (22:38 no GMT-3 = 01:38 do dia seguinte em UTC)
+    const dataInicio = new Date(Date.UTC(2022, 3, 10, 22 + 9, 38)); // 10 de abril de 2022, 22:38 GMT-3
 
+    let diferenca = agora.getTime() - dataInicio.getTime();
+
+    // Define constantes
+    const umMinuto = 1000 * 60;
+    const umaHora = umMinuto * 60;
+    const umDia = umaHora * 24;
+    const umAno = umDia * 365.25; // levando em conta anos bissextos
+
+    // Extrai os valores com precisão
+    const anos = Math.floor(diferenca / umAno);
+    diferenca %= umAno;
+
+    const dias = Math.floor(diferenca / umDia);
+    diferenca %= umDia;
+
+    const horas = Math.floor(diferenca / umaHora);
+    diferenca %= umaHora;
+
+    const minutos = Math.floor(diferenca / umMinuto);
+    const segundos = Math.floor((diferenca % umMinuto) / 1000);
+
+    // Atualiza os elementos na página
     document.getElementById("anos").textContent = anos;
     document.getElementById("dias").textContent = dias;
     document.getElementById("horas").textContent = horas;
     document.getElementById("minutos").textContent = minutos;
     document.getElementById("segundos").textContent = segundos;
 
-    // Atualiza o texto dentro do <p>
     document.getElementById("anos-texto").textContent = anos;
 }
 
