@@ -582,7 +582,7 @@ svg #line {
 
     /* Linha vertical no centro */
     .timeline::after {
-        left: 0.2%;
+        left: -1%;
         transform: translateX(0%);
         width: 0.25rem;
 
@@ -606,11 +606,11 @@ svg #line {
     }
 
     .evento p {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 
     .conteudo h3 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     /* Alternância de posição para eventos */
@@ -648,7 +648,7 @@ svg #line {
     .galeria-container {
         height: 45vh;
         gap: 20%;
-
+        margin: 0;
     }
 
     .galeria-item img {
