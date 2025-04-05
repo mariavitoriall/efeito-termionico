@@ -1,0 +1,726 @@
+.kaushan-script-regular {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+:root {
+    --main-bg-color: #eff1fa;
+    --main-text-color: #7A3167;
+    --second-text-color: #152B7A;
+    --purple: #A951F0;
+    --red: #FF262C;
+    --blue: #82CBF0;
+    --lilac: #E9A1F0;
+    --green: #3fdb85;
+    --main-font: 'Kaushan Script', cursive;
+    --second-font: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-bg-color);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--second-text-color)
+}
+
+/* Estiliza o header fixo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 4%;
+    background: var(--blue);
+    box-shadow: 0 0.125rem 0.30rem rgba(0, 0, 0, 0.1);
+    padding: 0.625rem 5%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Estiliza a logo e a imagem */
+.logo {
+    display: flex;
+    align-items: flex-start;
+    /* Alinha imagem e texto verticalmente */
+    gap: -1.88rem;
+    /* Ajuste a distância entre imagem e texto */
+    margin: 0% 20% 0 0%;
+    /* Move mais para a esquerda */
+    font-family: var(--main-font);
+    font-size: 35px;
+    white-space: nowrap;
+    justify-content: center;
+    color: var(--main-text-color);
+}
+
+/* Se a logo for uma imagem */
+.logo img {
+    height: 3.125rem;
+    margin: 2% 2% 0 0;
+    /* Ajuste o tamanho da imagem conforme necessário */
+}
+
+/* Estiliza o menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    padding: 0 12.5rem 0 0;
+    margin: 0;
+    font: var(--second-font);
+    max-width: 100vw;
+    /* Garante que a lista de navegação ocupe apenas o espaço disponível */
+    box-sizing: border-box;
+    justify-content: flex-end;
+    /* Alinha os itens à esquerda */
+}
+
+/* Estiliza os links do menu */
+nav ul li a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0.625rem 0.93rem;
+    transition: color 0.3s, background 0.3s;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    color: white;
+    background: var(--purple);
+    border-radius: 0.5rem;
+}
+
+#inicio {
+    text-align: center;
+    padding: 5% 5% 5% 5%;
+    /* Maior espaço no topo */
+    position: relative;
+    margin: -14.25rem 0 0 0;
+    /* Mantém a altura da tela inteira */
+}
+
+
+/* Estiliza o título */
+#inicio h1 {
+    font-size: 50px;
+    margin: 17% 0 0 0;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+}
+
+/* Contêiner do contador */
+#contador {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+/* Estiliza cada bloco do contador */
+.box {
+    background: var(--red);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.93rem 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0.125rem 0.188rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+
+/* Seção da linha do tempo */
+#linha-do-tempo {
+    text-align: center;
+    padding: 3.125rem 10%;
+    margin-top: -8.4rem;
+}
+
+/* Título da linha do tempo */
+#linha-do-tempo h2 {
+    font-size: 50px;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+}
+
+/* Container da timeline */
+.timeline {
+    position: relative;
+    max-width: 50rem;
+    margin: auto;
+}
+
+/* Linha vertical no centro */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 0.25rem;
+    background-color: var(--purple);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilização dos eventos */
+.evento {
+    position: relative;
+    background-color: white;
+    width: 45%;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.30rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.conteudo h3 {
+    color: var(--second-text-color);
+    font-family: var(--main-font);
+    font-size: 1.8rem;
+}
+
+.conteudo img {
+    width: 100%;
+    border-radius: 0.625rem;
+    margin: 0;
+}
+
+/* Alternância de posição (esquerda e direita) */
+.evento:nth-child(odd) {
+    left: 0;
+}
+
+.evento:nth-child(even) {
+    left: 50%;
+    transform: translateX(0%);
+}
+
+
+/* Bolinhas na linha */
+.evento::after {
+    content: "";
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: var(--purple);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Ajusta a bolinha dependendo da posição */
+.evento:nth-child(odd)::after {
+    right: -0.625rem;
+}
+
+.evento:nth-child(even)::after {
+    left: -0.625rem;
+}
+
+#galeria h2 {
+    font-size: 50px;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+}
+
+/* Estiliza a seção da galeria */
+#galeria {
+    text-align: center;
+    background: var(--light-bg);
+    padding: 3.125rem 10%;
+    margin-top: -6.25rem;
+}
+
+/* Container para rolagem lateral */
+.galeria-container {
+    display: flex;
+    overflow-x: auto;
+    /* Ativa a rolagem horizontal */
+    scroll-snap-type: x mandatory;
+    /* Suaviza a rolagem */
+    gap: 1.25rem;
+    padding: 0.625rem;
+    white-space: nowrap;
+    /* Mantém os itens lado a lado */
+}
+
+/* Estiliza cada item da galeria */
+.galeria-item {
+    flex: 0 0 auto;
+    /* Mantém tamanho fixo */
+    width: 18.75rem;
+    /* Largura das fotos */
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+/* Ajusta as imagens */
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Estiliza a legenda */
+.galeria-item p {
+    font-size: 16px;
+    margin-top: 0.5rem;
+    color: var(--main-text-color);
+}
+
+/* Estiliza a seção do quiz */
+#quiz {
+    text-align: center;
+    padding: 3.125rem 10%;
+    margin-top: -6.25rem;
+}
+
+#quiz h2 {
+    font-size: 50px;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+}
+
+/* Container das perguntas */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 37.5rem;
+    margin: auto;
+}
+
+/* Estiliza cada pergunta */
+.pergunta {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+/* Botões de resposta */
+button {
+    background: white;
+    display: block;
+    width: 100%;
+    padding: 0.625rem;
+    margin-top: 0.625rem;
+    font-size: 18px;
+    border: none;
+    border-radius: 0.30rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: var(--second-text-color);
+}
+
+/* Classe para resposta correta */
+.correto.selecionado {
+    background: var(--green);
+    color: white;
+}
+
+/* Classe para resposta errada */
+.errado.selecionado {
+    background: var(--red);
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.destaque {
+    animation: piscar 0.8s infinite alternate;
+}
+
+#musicas {
+    text-align: center;
+    background: var(--light-bg);
+    padding: 3.125rem 10%;
+    margin-top: -6.25rem;
+}
+
+#musicas h2 {
+    font-size: 50px;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+}
+
+.musicas-container {
+    display: flex;
+    overflow-x: auto;
+    /* Ativa a rolagem horizontal */
+    scroll-snap-type: x mandatory;
+    /* Suaviza a rolagem */
+    gap: 1.25rem;
+    padding: 0.625rem;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    /* Mantém os itens lado a lado */
+    justify-content: space-between;
+}
+
+.musica {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* Mantém tamanho fixo */
+    width: 18.75rem;
+    /* Largura das fotos */
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+.musica img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.botao {
+    display: inline-block;
+    padding: 0.5rem 0.93rem;
+    background: var(--purple);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.70rem;
+    transition: 0.3s;
+    margin-top: 4%;
+}
+
+.botao:hover {
+    background: var(--main-text-color);
+}
+
+/* Esconde a barra de rolagem para um visual mais clean */
+.musicas-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+#fim {
+    text-align: center;
+    background: var(--light-bg);
+    padding: 3.125rem 10%;
+    margin-top: -6.25rem;
+}
+
+#fim h2 {
+    font-size: 50px;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+}
+
+
+@keyframes piscar {
+    0% {
+        border: 0.188rem solid transparent;
+    }
+
+    100% {
+        border: 0.188rem solid var(--green);
+    }
+}
+
+button:disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+}
+
+
+svg #line {
+    fill: none;
+    stroke: var(--red);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-opacity: 1;
+    stroke-dasharray: 1000;
+    /* Grande o suficiente para cobrir todo o caminho */
+    stroke-dashoffset: 1000;
+    /* Começa totalmente invisível */
+    animation: dash 3s linear forwards;
+    /* Faz a linha ser desenhada progressivamente */
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1000;
+        /* Linha começa completamente escondida */
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        /* Linha é desenhada completamente */
+    }
+}
+
+
+/* Responsividade */
+@media (max-width: 1200px) {
+
+    html,
+    body {
+        width: 100%;
+        /* Ocupa 100% da largura da tela */
+        overflow-x: hidden;
+        /* Impede a rolagem horizontal */
+        margin: 0;
+        /* Remove qualquer margem padrão */
+        padding: 0 1rem;
+        /* Remove qualquer padding do body */
+        box-sizing: border-box;
+    }
+
+    header {
+        height: auto;
+        /* Ajusta a altura do header */
+        padding: 10px 20px;
+        width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        box-sizing: border-box;
+        /* Ajuste do espaço entre logo e menu */
+    }
+
+    .logo {
+        font-size: 3rem;
+    }
+
+    .logo img {
+        height: 3rem;
+        /* Ajuste o tamanho da imagem conforme necessário */
+    }
+
+    nav ul {
+        font-size: 2.5rem;
+    }
+
+
+    nav ul li {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        margin: 0 0.1rem 0 0.01rem;
+        padding: 0.5rem;
+    }
+
+    #inicio {
+        padding: 18.25rem 2rem 6rem 2rem;
+        overflow-x: hidden;
+        /* Mantém a altura da tela inteira */
+    }
+
+    #inicio p {
+        font-size: 2.2rem;
+    }
+
+    #inicio h1 {
+        font-size: 5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        font-size: 2rem;
+        border-radius: 20px;
+    }
+
+    #linha-do-tempo h2 {
+        font-size: 5rem;
+        margin-top: 5%;
+        padding: 0;
+    }
+
+    #linha-do-tempo .timeline {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #linha-do-tempo p {
+        font-size: 2.2rem;
+        padding: 0;
+    }
+
+    /* Linha vertical no centro */
+    .timeline::after {
+        left: 1%;
+        transform: translateX(0%);
+        width: 0.5rem;
+
+        /* Alinha a linha à esquerda */
+    }
+
+    /* Eventos */
+    .evento {
+        width: 90%;
+        margin: 1.25rem auto;
+        border-radius: 40px;
+        /* Faz com que as caixas de evento ocupem a maior parte da tela e fiquem centralizadas */
+    }
+
+    .evento img {
+        border-radius: 30px;
+    }
+
+    .evento h3 {
+        font-size: 2.5rem;
+    }
+
+    .evento p {
+        font-size: 2.2rem;
+    }
+
+    .conteudo h3 {
+        font-size: 3rem;
+    }
+
+    /* Alternância de posição para eventos */
+    .evento:nth-child(odd),
+    .evento:nth-child(even) {
+        left: 0;
+        transform: translateX(0%);
+        /* Coloca todos os eventos à direita da linha */
+    }
+
+    .evento::after {
+        left: 45%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    /* Para a alternância das bolinhas (em relação ao evento) */
+    .evento:nth-child(odd)::after {
+        left: -0.625rem;
+    }
+
+    .evento:nth-child(even)::after {
+        left: -0.625rem;
+    }
+
+    #galeria h2 {
+        font-size: 5rem;
+    }
+
+    #galeria p {
+        font-size: 2.2rem;
+    }
+
+    .galeria-container {
+        height: 45vh;
+        gap: 60%;
+
+    }
+
+    .galeria-item img {
+        height: 90%;
+        width: auto;
+        border-radius: 50px;
+    }
+
+    .galeria-item p {
+        width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    #quiz h2 {
+        font-size: 5rem;
+    }
+
+    #quiz p {
+        font-size: 2.2rem;
+    }
+
+    .quiz-container {
+        max-width: 100%;
+        font-size: 1.8rem;
+        border-radius: 40px;
+    }
+
+    .pergunta {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 40px;
+        font-size: 1.7rem;
+    }
+
+    button {
+        border-radius: 40px;
+        font-size: 1.7rem;
+    }
+
+    #musicas h2 {
+        font-size: 5rem;
+
+    }
+
+    #musicas p {
+        font-size: 2.2rem;
+    }
+
+
+    #fim h2 {
+        font-size: 5rem;
+
+    }
+
+    #fim p {
+        font-size: 2.2rem;
+    }
+
+
+    .musicas-container {
+        height: 45vh;
+        gap: 8%;
+    }
+
+    .musica {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 50px;
+    }
+
+    .musica a {
+        border-radius: 40px;
+        font-size: 1.7rem;
+    }
+
+    .musica img {
+        border-radius: 50px;
+    }
+
+
+}
