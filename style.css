@@ -583,6 +583,7 @@ svg #line {
     /* Linha vertical no centro */
     .timeline::after {
         left: -1%;
+        right: 4%;
         transform: translateX(0%);
         width: 0.25rem;
 
@@ -611,6 +612,10 @@ svg #line {
 
     .conteudo h3 {
         font-size: 1.4rem;
+    }
+
+    .conteudo p {
+        font-size: 0.8rem;
     }
 
     /* Alternância de posição para eventos */
