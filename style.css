@@ -587,7 +587,7 @@ svg #line {
 
     /* Linha vertical no centro */
     .timeline::after {
-        left: -2%;
+        left: -4.5%;
         right: 7%;
         transform: translateX(0%);
         width: 0.25rem;
