@@ -501,7 +501,7 @@ svg #line {
         padding: 10px 20px;
         width: 100vw;
         overflow-x: hidden;
-        margin: 0 4rem 0 6rem;
+        margin: 0 2rem 0 4rem;
         justify-content: space-between;
         position: fixed;
         top: 0;
@@ -512,7 +512,7 @@ svg #line {
     }
 
     .logo {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
 
     .logo img {
@@ -541,6 +541,10 @@ svg #line {
         padding: 18.25rem 2rem 6rem 2rem;
         overflow-x: hidden;
         /* Mantém a altura da tela inteira */
+    }
+
+    .contador {
+        font-size: 0.8rem;
     }
 
     #inicio p {
