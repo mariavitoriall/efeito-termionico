@@ -501,7 +501,7 @@ svg #line {
         padding: 10px 20px;
         width: 100vw;
         overflow-x: hidden;
-        margin: 0 2rem 0 4rem;
+        margin: 0;
         justify-content: space-between;
         position: fixed;
         top: 0;
@@ -544,7 +544,7 @@ svg #line {
     }
 
     .contador {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
     #inicio p {
