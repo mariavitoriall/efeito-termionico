@@ -7,7 +7,7 @@ function atualizarContador() {
     const agora = new Date();
 
     // Corrige a data de início para o equivalente em UTC (22:38 no GMT-3 = 01:38 do dia seguinte em UTC)
-    const dataInicio = new Date(Date.UTC(2022, 3, 10, 22 + 9, 38)); // 10 de abril de 2022, 22:38 GMT-3
+    const dataInicio = new Date(Date.UTC(2022, 3, 10, 22 - 6, 38 - 10)); // 10 de abril de 2022, 22:38 GMT-3
 
     let diferenca = agora.getTime() - dataInicio.getTime();
 
