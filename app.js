@@ -2,24 +2,25 @@ const dataInicio = new Date("2022-04-10T22:38:00-03:00");
 
 function atualizarContador() {
     const agora = new Date();
-    const diferenca = agora.getTime() - dataInicio.getTime();
 
-    const umMinuto = 1000 * 60;
-    const umaHora = umMinuto * 60;
-    const umDia = umaHora * 24;
-    const umAno = umDia * 365.25;
+    let segundosTotais = Math.floor((agora - dataInicio) / 1000);
 
-    const anos = Math.floor(diferenca / umAno);
-    let resto = diferenca % umAno;
+    const segundosPorAno = 365.25 * 24 * 60 * 60; // ainda usado aqui mas sem módulo depois
+    const segundosPorDia = 24 * 60 * 60;
+    const segundosPorHora = 60 * 60;
+    const segundosPorMinuto = 60;
 
-    const dias = Math.floor(resto / umDia);
-    resto %= umDia;
+    const anos = Math.floor(segundosTotais / segundosPorAno);
+    segundosTotais -= anos * segundosPorAno;
 
-    const horas = Math.floor(resto / umaHora);
-    resto %= umaHora;
+    const dias = Math.floor(segundosTotais / segundosPorDia);
+    segundosTotais -= dias * segundosPorDia;
 
-    const minutos = Math.floor(resto / umMinuto);
-    const segundos = Math.floor((resto % umMinuto) / 1000);
+    const horas = Math.floor(segundosTotais / segundosPorHora);
+    segundosTotais -= horas * segundosPorHora;
+
+    const minutos = Math.floor(segundosTotais / segundosPorMinuto);
+    const segundos = segundosTotais % segundosPorMinuto;
 
     document.getElementById("anos").textContent = anos;
     document.getElementById("dias").textContent = dias;
@@ -27,6 +28,7 @@ function atualizarContador() {
     document.getElementById("minutos").textContent = minutos;
     document.getElementById("segundos").textContent = segundos;
 }
+
 console.log("Agora:", new Date().toString());
 console.log("Data Início:", dataInicio.toString());
 
