@@ -1,46 +1,46 @@
-const dataInicio = new Date("2022-04-10T22:38:00-03:00");
+const dataInicio = new Date("2022-04-10T22:38:00-03:00"); // fuso fixo
 
 function atualizarContador() {
     const agora = new Date();
 
-    let segundosTotais = Math.floor((agora - dataInicio) / 1000);
+    let diferenca = agora.getTime() - dataInicio.getTime();
 
-    const segundosPorAno = 365.25 * 24 * 60 * 60;
-    const segundosPorDia = 24 * 60 * 60;
-    const segundosPorHora = 60 * 60;
-    const segundosPorMinuto = 60;
+    const umMinuto = 1000 * 60;
+    const umaHora = umMinuto * 60;
+    const umDia = umaHora * 24;
+    const umAno = umDia * 365.25;
 
-    const anos = Math.floor(segundosTotais / segundosPorAno);
-    segundosTotais -= anos * segundosPorAno;
+    const anos = Math.floor(diferenca / umAno);
+    diferenca %= umAno;
 
-    const dias = Math.floor(segundosTotais / segundosPorDia);
-    segundosTotais -= dias * segundosPorDia;
+    const dias = Math.floor(diferenca / umDia);
+    diferenca %= umDia;
 
-    const horas = Math.floor(segundosTotais / segundosPorHora);
-    segundosTotais -= horas * segundosPorHora;
+    const horas = Math.floor(diferenca / umaHora);
+    diferenca %= umaHora;
 
-    const minutos = Math.floor(segundosTotais / segundosPorMinuto);
-    const segundos = segundosTotais % segundosPorMinuto;
+    const minutos = Math.floor(diferenca / umMinuto);
+    const segundos = Math.floor((diferenca % umMinuto) / 1000);
 
-    // Atualiza o contador na página
-    document.getElementById("anos").textContent = anos;
-    document.getElementById("dias").textContent = dias;
-    document.getElementById("horas").textContent = horas;
-    document.getElementById("minutos").textContent = minutos;
-    document.getElementById("segundos").textContent = segundos;
+    // Exibe os valores na página (ou no console)
+    console.log(`Anos: ${anos}`);
+    console.log(`Dias: ${dias}`);
+    console.log(`Horas: ${horas}`);
+    console.log(`Minutos: ${minutos}`);
+    console.log(`Segundos: ${segundos}`);
 
-    // Cálculo da mensagem no console
+    // Mensagem para o próximo aniversário
     const proximoAniversario = new Date(dataInicio);
     proximoAniversario.setFullYear(dataInicio.getFullYear() + anos + 1);
 
     const faltaMs = proximoAniversario - agora;
     const faltaSegundos = Math.floor(faltaMs / 1000);
-
     const faltaDias = Math.floor(faltaSegundos / (60 * 60 * 24));
     const faltaHoras = Math.floor((faltaSegundos % (60 * 60 * 24)) / (60 * 60));
 
     console.log(`Faltam ${faltaDias} dias e ${faltaHoras} horas para completar ${anos + 1} anos.`);
 }
+
 
 setInterval(atualizarContador, 1000);
 atualizarContador();
