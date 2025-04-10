@@ -32,6 +32,17 @@ function atualizarContador() {
 console.log("Agora:", new Date().toString());
 console.log("Data Início:", dataInicio.toString());
 
+const proximoAniversario = new Date(dataInicio);
+proximoAniversario.setFullYear(dataInicio.getFullYear() + anos + 1);
+
+const faltaMs = proximoAniversario - agora;
+const faltaSegundos = Math.floor(faltaMs / 1000);
+
+const faltaDias = Math.floor(faltaSegundos / (60 * 60 * 24));
+const faltaHoras = Math.floor((faltaSegundos % (60 * 60 * 24)) / (60 * 60));
+
+console.log(`Faltam ${faltaDias} dias e ${faltaHoras} horas para completar ${anos + 1} anos.`);
+
 setInterval(atualizarContador, 1000);
 atualizarContador();
 
