@@ -5,7 +5,7 @@ function atualizarContador() {
 
     let segundosTotais = Math.floor((agora - dataInicio) / 1000);
 
-    const segundosPorAno = 365.25 * 24 * 60 * 60; // ainda usado aqui mas sem módulo depois
+    const segundosPorAno = 365.25 * 24 * 60 * 60;
     const segundosPorDia = 24 * 60 * 60;
     const segundosPorHora = 60 * 60;
     const segundosPorMinuto = 60;
@@ -22,29 +22,29 @@ function atualizarContador() {
     const minutos = Math.floor(segundosTotais / segundosPorMinuto);
     const segundos = segundosTotais % segundosPorMinuto;
 
+    // Atualiza o contador na página
     document.getElementById("anos").textContent = anos;
     document.getElementById("dias").textContent = dias;
     document.getElementById("horas").textContent = horas;
     document.getElementById("minutos").textContent = minutos;
     document.getElementById("segundos").textContent = segundos;
+
+    // Cálculo da mensagem no console
+    const proximoAniversario = new Date(dataInicio);
+    proximoAniversario.setFullYear(dataInicio.getFullYear() + anos + 1);
+
+    const faltaMs = proximoAniversario - agora;
+    const faltaSegundos = Math.floor(faltaMs / 1000);
+
+    const faltaDias = Math.floor(faltaSegundos / (60 * 60 * 24));
+    const faltaHoras = Math.floor((faltaSegundos % (60 * 60 * 24)) / (60 * 60));
+
+    console.log(`Faltam ${faltaDias} dias e ${faltaHoras} horas para completar ${anos + 1} anos.`);
 }
-
-console.log("Agora:", new Date().toString());
-console.log("Data Início:", dataInicio.toString());
-
-const proximoAniversario = new Date(dataInicio);
-proximoAniversario.setFullYear(dataInicio.getFullYear() + anos + 1);
-
-const faltaMs = proximoAniversario - agora;
-const faltaSegundos = Math.floor(faltaMs / 1000);
-
-const faltaDias = Math.floor(faltaSegundos / (60 * 60 * 24));
-const faltaHoras = Math.floor((faltaSegundos % (60 * 60 * 24)) / (60 * 60));
-
-console.log(`Faltam ${faltaDias} dias e ${faltaHoras} horas para completar ${anos + 1} anos.`);
 
 setInterval(atualizarContador, 1000);
 atualizarContador();
+
 
 document.querySelectorAll(".pergunta").forEach(pergunta => {
     const botoes = pergunta.querySelectorAll("button");
