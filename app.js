@@ -1,4 +1,4 @@
-const dataInicio = new Date("2022-04-10T22:38:00-03:00");
+const dataInicio = new Date("2022-04-10T22:28:00-03:00");
 
 function atualizarContador() {
     const agora = new Date();
