@@ -13,17 +13,19 @@
 }
 
 :root {
-    --main-bg-color: #eff1fa;
-    --main-text-color: #7A3167;
-    --second-text-color: #152B7A;
-    --purple: #A951F0;
-    --red: #FF262C;
-    --blue: #82CBF0;
-    --lilac: #E9A1F0;
-    --green: #3fdb85;
-    --main-font: 'Kaushan Script', cursive;
+    --main-bg-color: #fff2bd;
+    --main-text-color: #f85f14;
+    --second-text-color: #1a1a1a;
+    --yellow: #ff9810;
+    --red: #fa0c04;
+    --dark-red: #af0500;
+    --orange1: #fff2bd;
+    --orange2: #ff914d;
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --second-font: 'Montserrat', sans-serif;
 }
+
+
 
 body {
     height: 100vh;
@@ -37,6 +39,45 @@ body {
     color: var(--second-text-color)
 }
 
+.hero-section {
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* escurece para melhor leitura */
+    z-index: -1;
+}
+
+.content {
+    max-width: 800px;
+    padding: 2rem;
+    z-index: 1;
+}
+
+
 /* Estiliza o header fixo */
 header {
     position: fixed;
@@ -44,7 +85,7 @@ header {
     width: 100%;
     max-width: 100vw;
     height: 4%;
-    background: var(--blue);
+    background: var(--dark-red);
     box-shadow: 0 0.125rem 0.30rem rgba(0, 0, 0, 0.1);
     padding: 0.625rem 5%;
     z-index: 1000;
@@ -54,27 +95,27 @@ header {
     overflow: hidden;
 }
 
-/* Estiliza a logo e a imagem */
 .logo {
     display: flex;
-    align-items: flex-start;
-    /* Alinha imagem e texto verticalmente */
-    gap: -1.88rem;
-    /* Ajuste a distância entre imagem e texto */
-    margin: 0% 20% 0 0%;
-    /* Move mais para a esquerda */
+    align-items: center;
+    /* Alinha verticalmente ao centro */
+    gap: 1rem;
+    /* Espaço entre imagem e texto */
+    margin: 0 20% 0 0;
     font-family: var(--main-font);
     font-size: 35px;
     white-space: nowrap;
     justify-content: center;
-    color: var(--main-text-color);
+    color: var(--orange1);
 }
 
-/* Se a logo for uma imagem */
 .logo img {
-    height: 3.125rem;
-    margin: 2% 2% 0 0;
-    /* Ajuste o tamanho da imagem conforme necessário */
+    width: 12rem;
+    /* ajuste esse valor conforme a proporção da sua imagem */
+    height: auto;
+    margin: 0;
+    /* remove margens que podem desalinhá-la */
+    display: block;
 }
 
 /* Estiliza o menu */
@@ -95,7 +136,7 @@ nav ul {
 /* Estiliza os links do menu */
 nav ul li a {
     text-decoration: none;
-    color: var(--main-text-color);
+    color: var(--orange1);
     font-size: 18px;
     font-weight: 400;
     padding: 0.625rem 0.93rem;
@@ -105,7 +146,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: white;
-    background: var(--purple);
+    background: var(--yellow);
     border-radius: 0.5rem;
 }
 
@@ -121,10 +162,12 @@ nav ul li a:hover {
 
 /* Estiliza o título */
 #inicio h1 {
-    font-size: 50px;
+    font-size: 8rem;
     margin: 17% 0 0 0;
     font-family: var(--main-font);
-    color: var(--main-text-color);
+    color: var(--orange1);
+    line-height: 8rem;
+    /* diminui o espaçamento entre letras */
 }
 
 /* Contêiner do contador */
@@ -156,6 +199,7 @@ nav ul li a:hover {
 /* Título da linha do tempo */
 #linha-do-tempo h2 {
     font-size: 50px;
+    margin-top: 6rem;
     font-family: var(--main-font);
     color: var(--main-text-color);
 }
@@ -172,7 +216,7 @@ nav ul li a:hover {
     content: "";
     position: absolute;
     width: 0.25rem;
-    background-color: var(--purple);
+    background-color: var(--yellow);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -202,6 +246,14 @@ nav ul li a:hover {
     margin: 0;
 }
 
+.conteudo video {
+    width: 100%;
+    border-radius: 0.625rem;
+    margin: 0;
+    display: block;
+}
+
+
 /* Alternância de posição (esquerda e direita) */
 .evento:nth-child(odd) {
     left: 0;
@@ -219,7 +271,7 @@ nav ul li a:hover {
     position: absolute;
     width: 1.25rem;
     height: 1.25rem;
-    background: var(--purple);
+    background: var(--yellow);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
@@ -234,14 +286,20 @@ nav ul li a:hover {
     left: -0.625rem;
 }
 
-#galeria h2 {
+#teoria h2 {
     font-size: 50px;
     font-family: var(--main-font);
     color: var(--main-text-color);
 }
 
-/* Estiliza a seção da galeria */
-#galeria {
+#teoria h3 {
+    font-size: 30px;
+    font-family: var(--main-font);
+    color: var(--yellow);
+}
+
+/* Estiliza a seção da teoria */
+#teoria {
     text-align: center;
     background: var(--light-bg);
     padding: 3.125rem 10%;
@@ -249,7 +307,7 @@ nav ul li a:hover {
 }
 
 /* Container para rolagem lateral */
-.galeria-container {
+.teoria-container {
     display: flex;
     overflow-x: auto;
     /* Ativa a rolagem horizontal */
@@ -261,8 +319,8 @@ nav ul li a:hover {
     /* Mantém os itens lado a lado */
 }
 
-/* Estiliza cada item da galeria */
-.galeria-item {
+/* Estiliza cada item da teoria */
+.teoria-item {
     flex: 0 0 auto;
     /* Mantém tamanho fixo */
     width: 18.75rem;
@@ -271,36 +329,53 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Ajusta as imagens */
-.galeria-item img {
-    width: 100%;
-    height: auto;
+#teoria img,
+#teoria video {
+    width: auto;
+    height: 30rem;
     border-radius: 0.625rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 /* Estiliza a legenda */
-.galeria-item p {
+.teoria-item p {
     font-size: 16px;
     margin-top: 0.5rem;
     color: var(--main-text-color);
 }
 
-/* Estiliza a seção do quiz */
-#quiz {
+#teoria ul {
+    text-align: left;
+    padding-left: 1.5rem;
+    /* opcional: adiciona recuo da borda esquerda */
+    margin: 0;
+    /* remove espaçamento externo se necessário */
+}
+
+#teoria .equacao img {
+    height: 100px;
+    /* ajuste esse valor como quiser */
+}
+
+#teoria .retificacao img {
+    height: 200px;
+    /* ajuste esse valor como quiser */
+}
+
+/* Estiliza a seção do sobre */
+#sobre {
     text-align: center;
     padding: 3.125rem 10%;
     margin-top: -6.25rem;
 }
 
-#quiz h2 {
+#sobre h2 {
     font-size: 50px;
     font-family: var(--main-font);
     color: var(--main-text-color);
 }
 
 /* Container das perguntas */
-.quiz-container {
+.sobre-container {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -336,7 +411,7 @@ button {
 
 /* Classe para resposta correta */
 .correto.selecionado {
-    background: var(--green);
+    background: var(--orange2);
     color: white;
 }
 
@@ -354,20 +429,20 @@ button:hover {
     animation: piscar 0.8s infinite alternate;
 }
 
-#musicas {
+#referencias {
     text-align: center;
     background: var(--light-bg);
     padding: 3.125rem 10%;
     margin-top: -6.25rem;
 }
 
-#musicas h2 {
+#referencias h2 {
     font-size: 50px;
     font-family: var(--main-font);
     color: var(--main-text-color);
 }
 
-.musicas-container {
+.referencias-container {
     display: flex;
     overflow-x: auto;
     /* Ativa a rolagem horizontal */
@@ -403,7 +478,7 @@ button:hover {
 .botao {
     display: inline-block;
     padding: 0.5rem 0.93rem;
-    background: var(--purple);
+    background: var(--yellow);
     color: white;
     text-decoration: none;
     border-radius: 0.70rem;
@@ -416,23 +491,31 @@ button:hover {
 }
 
 /* Esconde a barra de rolagem para um visual mais clean */
-.musicas-container::-webkit-scrollbar {
+.referencias-container::-webkit-scrollbar {
     display: none;
 }
 
 
-#fim {
+#referencias {
     text-align: center;
     background: var(--light-bg);
     padding: 3.125rem 10%;
     margin-top: -6.25rem;
 }
 
-#fim h2 {
+#referencias h2 {
     font-size: 50px;
     font-family: var(--main-font);
     color: var(--main-text-color);
 }
+
+#referencias ol {
+    font-size: 16px;
+    font-family: var(--second-font);
+    color: var(--dark-red);
+    text-align: left;
+}
+
 
 
 @keyframes piscar {
@@ -441,7 +524,7 @@ button:hover {
     }
 
     100% {
-        border: 0.188rem solid var(--green);
+        border: 0.188rem solid var(--orange2);
     }
 }
 
@@ -647,41 +730,41 @@ svg #line {
         left: -0.625rem;
     }
 
-    #galeria h2 {
+    #teoria h2 {
         font-size: 2.5rem;
     }
 
-    #galeria p {
+    #teoria p {
         font-size: 1.1rem;
     }
 
-    .galeria-container {
+    .teoria-container {
         height: 45vh;
         gap: 20%;
         margin: 0;
     }
 
-    .galeria-item img {
+    .teoria-item img {
         height: 90%;
         width: auto;
         border-radius: 30px;
     }
 
-    .galeria-item p {
+    .teoria-item p {
         width: 100%;
         text-align: center;
         font-size: 0.9rem;
     }
 
-    #quiz h2 {
+    #sobre h2 {
         font-size: 2.5rem;
     }
 
-    #quiz p {
+    #sobre p {
         font-size: 1.1rem;
     }
 
-    .quiz-container {
+    .sobre-container {
         max-width: 100%;
         font-size: 0.9rem;
         border-radius: 25px;
@@ -699,27 +782,27 @@ svg #line {
         font-size: 0.9rem;
     }
 
-    #musicas h2 {
+    #referencias h2 {
         font-size: 2.5rem;
 
     }
 
-    #musicas p {
+    #referencias p {
         font-size: 1.1rem;
     }
 
 
-    #fim h2 {
+    #referencias h2 {
         font-size: 2.5rem;
 
     }
 
-    #fim p {
+    #referencias p {
         font-size: 1.1rem;
     }
 
 
-    .musicas-container {
+    .referencias-container {
         height: 45vh;
         gap: 8%;
     }
