@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+
 .kaushan-script-regular {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;
