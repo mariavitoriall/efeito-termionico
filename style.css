@@ -354,11 +354,13 @@ nav ul li a:hover {
 
 #teoria .equacao img {
     height: 100px;
+    width: auto;
     /* ajuste esse valor como quiser */
 }
 
 #teoria .retificacao img {
     height: 200px;
+    width: auto;
     /* ajuste esse valor como quiser */
 }
 
@@ -776,10 +778,23 @@ svg #line {
 
     #teoria img,
     #teoria video {
-        width: 80%;
+        width: 90%;
         height: auto;
         border-radius: 0.625rem;
     }
+
+    #teoria .equacao img {
+        height: auto;
+        width: 50%;
+        /* ajuste esse valor como quiser */
+    }
+
+    #teoria .retificacao img {
+        height: auto;
+        width: 100%;
+        /* ajuste esse valor como quiser */
+    }
+
 
     .teoria-item p {
         width: 100%;
