@@ -585,7 +585,7 @@ svg #line {
     }
 
     #inicio .content h1 {
-        margin: 0;
+        margin-top: 5rem;
         padding: 0;
         line-height: 1;
         font-size: 2.8rem;
@@ -646,7 +646,7 @@ svg #line {
     }
 
     nav ul li a {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         margin: 0 0.1rem 0 0.01rem;
         padding: 0.1rem;
     }
