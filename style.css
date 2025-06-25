@@ -82,12 +82,12 @@ body {
 header {
     position: fixed;
     top: 0;
-    width: 80%;
+    width: 100%;
     max-width: 100vw;
     height: 4%;
     background: var(--dark-red);
     box-shadow: 0 0.125rem 0.30rem rgba(0, 0, 0, 0.1);
-    padding: 0.625rem 5%;
+    padding: 0.625rem 15% 0.625rem 1%;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -122,9 +122,10 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.25rem;
+    gap: 0.75rem;
     padding: 0 12.5rem 0 0;
     margin: 0;
+    margin-left: -5rem;
     font: var(--second-font);
     width: 100%;
     /* Garante que a lista de navegação ocupe apenas o espaço disponível */
