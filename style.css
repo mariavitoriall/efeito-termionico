@@ -599,7 +599,8 @@ svg #line {
     }
 
     .logo img {
-        height: 1rem;
+        width: 2rem;
+        height: auto;
         /* Ajuste o tamanho da imagem conforme necessário */
     }
 
@@ -744,10 +745,11 @@ svg #line {
         margin: 0;
     }
 
-    .teoria-item img {
-        height: 90%;
-        width: auto;
-        border-radius: 30px;
+    #teoria img,
+    #teoria video {
+        width: 80%;
+        height: auto;
+        border-radius: 0.625rem;
     }
 
     .teoria-item p {
