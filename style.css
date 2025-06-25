@@ -31,7 +31,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    width: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     background: var(--main-bg-color);
@@ -126,7 +126,7 @@ nav ul {
     padding: 0 12.5rem 0 0;
     margin: 0;
     font: var(--second-font);
-    max-width: 100vw;
+    width: 100%;
     /* Garante que a lista de navegação ocupe apenas o espaço disponível */
     box-sizing: border-box;
     justify-content: flex-end;
@@ -576,6 +576,30 @@ svg #line {
         padding: 0 0.4rem;
         /* Remove qualquer padding do body */
         box-sizing: border-box;
+    }
+
+    .hero-section .content h1 {
+        margin: 0;
+        padding: 0;
+        line-height: 1.1;
+    }
+
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+
+    .content {
+        max-width: 800px;
+        padding: 2rem;
+        z-index: 1;
     }
 
     header {
