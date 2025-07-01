@@ -111,10 +111,8 @@ header {
 
 .logo img {
     width: 12rem;
-    /* ajuste esse valor conforme a proporção da sua imagem */
     height: auto;
     margin: 0;
-    /* remove margens que podem desalinhá-la */
     display: block;
 }
 
@@ -128,13 +126,10 @@ nav ul {
     margin-left: -5rem;
     font: var(--second-font);
     width: 100%;
-    /* Garante que a lista de navegação ocupe apenas o espaço disponível */
     box-sizing: border-box;
     justify-content: flex-end;
-    /* Alinha os itens à esquerda */
 }
 
-/* Estiliza os links do menu */
 nav ul li a {
     text-decoration: none;
     color: var(--orange1);
@@ -154,24 +149,19 @@ nav ul li a:hover {
 #inicio {
     text-align: center;
     padding: 5% 5% 5% 5%;
-    /* Maior espaço no topo */
     position: relative;
     margin: -14.25rem 0 0 0;
-    /* Mantém a altura da tela inteira */
 }
 
 
-/* Estiliza o título */
 #inicio h1 {
     font-size: 8rem;
     margin: 17% 0 0 0;
     font-family: var(--main-font);
     color: var(--orange1);
     line-height: 8rem;
-    /* diminui o espaçamento entre letras */
 }
 
-/* Contêiner do contador */
 #contador {
     display: flex;
     justify-content: center;
@@ -179,7 +169,6 @@ nav ul li a:hover {
     margin-top: 1.25rem;
 }
 
-/* Estiliza cada bloco do contador */
 .box {
     background: var(--red);
     color: white;
@@ -190,14 +179,12 @@ nav ul li a:hover {
     box-shadow: 0.125rem 0.188rem 0.625rem rgba(0, 0, 0, 0.2);
 }
 
-/* Seção da linha do tempo */
 #linha-do-tempo {
     text-align: center;
     padding: 3.125rem 10%;
     margin-top: -8.4rem;
 }
 
-/* Título da linha do tempo */
 #linha-do-tempo h2 {
     font-size: 50px;
     margin-top: 6rem;
@@ -205,14 +192,12 @@ nav ul li a:hover {
     color: var(--main-text-color);
 }
 
-/* Container da timeline */
 .timeline {
     position: relative;
     max-width: 50rem;
     margin: auto;
 }
 
-/* Linha vertical no centro */
 .timeline::after {
     content: "";
     position: absolute;
@@ -224,7 +209,6 @@ nav ul li a:hover {
     transform: translateX(-50%);
 }
 
-/* Estilização dos eventos */
 .evento {
     position: relative;
     background-color: white;
@@ -254,8 +238,6 @@ nav ul li a:hover {
     display: block;
 }
 
-
-/* Alternância de posição (esquerda e direita) */
 .evento:nth-child(odd) {
     left: 0;
 }
@@ -265,8 +247,6 @@ nav ul li a:hover {
     transform: translateX(0%);
 }
 
-
-/* Bolinhas na linha */
 .evento::after {
     content: "";
     position: absolute;
@@ -278,7 +258,6 @@ nav ul li a:hover {
     transform: translateY(-50%);
 }
 
-/* Ajusta a bolinha dependendo da posição */
 .evento:nth-child(odd)::after {
     right: -0.625rem;
 }
@@ -299,7 +278,6 @@ nav ul li a:hover {
     color: var(--yellow);
 }
 
-/* Estiliza a seção da teoria */
 #teoria {
     text-align: center;
     background: var(--light-bg);
@@ -307,25 +285,18 @@ nav ul li a:hover {
     margin-top: -6.25rem;
 }
 
-/* Container para rolagem lateral */
 .teoria-container {
     display: flex;
     overflow-x: auto;
-    /* Ativa a rolagem horizontal */
     scroll-snap-type: x mandatory;
-    /* Suaviza a rolagem */
     gap: 1.25rem;
     padding: 0.625rem;
     white-space: nowrap;
-    /* Mantém os itens lado a lado */
 }
 
-/* Estiliza cada item da teoria */
 .teoria-item {
     flex: 0 0 auto;
-    /* Mantém tamanho fixo */
     width: 18.75rem;
-    /* Largura das fotos */
     scroll-snap-align: start;
     text-align: center;
 }
@@ -337,7 +308,6 @@ nav ul li a:hover {
     border-radius: 0.625rem;
 }
 
-/* Estiliza a legenda */
 .teoria-item p {
     font-size: 16px;
     margin-top: 0.5rem;
@@ -347,24 +317,19 @@ nav ul li a:hover {
 #teoria ul {
     text-align: left;
     padding-left: 1.5rem;
-    /* opcional: adiciona recuo da borda esquerda */
     margin: 0;
-    /* remove espaçamento externo se necessário */
 }
 
 #teoria .equacao img {
     height: 100px;
     width: auto;
-    /* ajuste esse valor como quiser */
 }
 
 #teoria .retificacao img {
     height: 200px;
     width: auto;
-    /* ajuste esse valor como quiser */
 }
 
-/* Estiliza a seção do sobre */
 #sobre {
     text-align: center;
     padding: 3.125rem 10%;
@@ -376,8 +341,6 @@ nav ul li a:hover {
     font-family: var(--main-font);
     color: var(--main-text-color);
 }
-
-/* Container das perguntas */
 .sobre-container {
     display: flex;
     flex-direction: column;
@@ -386,7 +349,6 @@ nav ul li a:hover {
     margin: auto;
 }
 
-/* Estiliza cada pergunta */
 .pergunta {
     background: white;
     padding: 1.25rem;
@@ -397,7 +359,6 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Botões de resposta */
 button {
     background: white;
     display: block;
@@ -412,13 +373,11 @@ button {
     color: var(--second-text-color);
 }
 
-/* Classe para resposta correta */
 .correto.selecionado {
     background: var(--orange2);
     color: white;
 }
 
-/* Classe para resposta errada */
 .errado.selecionado {
     background: var(--red);
     color: white;
@@ -448,14 +407,12 @@ button:hover {
 .referencias-container {
     display: flex;
     overflow-x: auto;
-    /* Ativa a rolagem horizontal */
     scroll-snap-type: x mandatory;
-    /* Suaviza a rolagem */
     gap: 1.25rem;
     padding: 0.625rem;
     white-space: nowrap;
     scrollbar-width: thin;
-    /* Mantém os itens lado a lado */
+
     justify-content: space-between;
 }
 
@@ -463,9 +420,8 @@ button:hover {
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    /* Mantém tamanho fixo */
+
     width: 18.75rem;
-    /* Largura das fotos */
     scroll-snap-align: start;
     text-align: center;
 }
@@ -493,7 +449,6 @@ button:hover {
     background: var(--main-text-color);
 }
 
-/* Esconde a barra de rolagem para um visual mais clean */
 .referencias-container::-webkit-scrollbar {
     display: none;
 }
@@ -519,8 +474,6 @@ button:hover {
     text-align: left;
 }
 
-
-
 @keyframes piscar {
     0% {
         border: 0.188rem solid transparent;
@@ -545,39 +498,28 @@ svg #line {
     stroke-linejoin: round;
     stroke-opacity: 1;
     stroke-dasharray: 1000;
-    /* Grande o suficiente para cobrir todo o caminho */
     stroke-dashoffset: 1000;
-    /* Começa totalmente invisível */
     animation: dash 3s linear forwards;
-    /* Faz a linha ser desenhada progressivamente */
 }
 
 @keyframes dash {
     0% {
         stroke-dashoffset: 1000;
-        /* Linha começa completamente escondida */
     }
 
     100% {
         stroke-dashoffset: 0;
-        /* Linha é desenhada completamente */
     }
 }
 
-
-/* Responsividade */
 @media (max-width: 1200px) {
 
     html,
     body {
         width: 100%;
-        /* Ocupa 100% da largura da tela */
         overflow-x: hidden;
-        /* Impede a rolagem horizontal */
         margin: 0;
-        /* Remove qualquer margem padrão */
         padding: 0 0.4rem;
-        /* Remove qualquer padding do body */
         box-sizing: border-box;
     }
 
@@ -602,7 +544,6 @@ svg #line {
 
     header {
         height: auto;
-        /* Ajusta a altura do header */
         padding: 10px 20px;
         width: 100vw;
         margin-left: 4%;
@@ -614,7 +555,6 @@ svg #line {
         left: 0;
 
         box-sizing: border-box;
-        /* Ajuste do espaço entre logo e menu */
     }
 
     nav ul {
@@ -632,7 +572,6 @@ svg #line {
     .logo img {
         width: 2rem;
         height: auto;
-        /* Ajuste o tamanho da imagem conforme necessário */
     }
 
     nav ul {
@@ -656,7 +595,6 @@ svg #line {
     #inicio {
         padding: -12.25rem 2rem 6rem 2rem;
         overflow-x: hidden;
-        /* Mantém a altura da tela inteira */
     }
 
     #contador {
@@ -700,22 +638,17 @@ svg #line {
         padding: 0;
     }
 
-    /* Linha vertical no centro */
     .timeline::after {
         left: -3.5%;
         right: 7%;
         transform: translateX(0%);
         width: 0.25rem;
-
-        /* Alinha a linha à esquerda */
     }
 
-    /* Eventos */
     .evento {
         width: 90%;
         margin: 0.8rem auto;
         border-radius: 30px;
-        /* Faz com que as caixas de evento ocupem a maior parte da tela e fiquem centralizadas */
     }
 
     .evento img {
@@ -738,12 +671,10 @@ svg #line {
         font-size: 0.8rem;
     }
 
-    /* Alternância de posição para eventos */
     .evento:nth-child(odd),
     .evento:nth-child(even) {
         left: 0;
         transform: translateX(0%);
-        /* Coloca todos os eventos à direita da linha */
     }
 
     .evento::after {
@@ -753,7 +684,6 @@ svg #line {
         height: 1.5rem;
     }
 
-    /* Para a alternância das bolinhas (em relação ao evento) */
     .evento:nth-child(odd)::after {
         left: -0.625rem;
     }
@@ -786,13 +716,13 @@ svg #line {
     #teoria .equacao img {
         height: auto;
         width: 50%;
-        /* ajuste esse valor como quiser */
+
     }
 
     #teoria .retificacao img {
         height: auto;
         width: 100%;
-        /* ajuste esse valor como quiser */
+
     }
 
 
